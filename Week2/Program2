@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int size,flag=0;
+        cin>>size;
+        int a[size],i,j,k;
+        for(i=0;i<size;i++)
+            cin>>a[i];
+        for(i=0;i<size;i++)
+        {
+            for(j=i+1;j<size;j++)
+            {
+                for(k=j+1;k<size;k++)
+                {
+                    if(a[i]+a[j]==a[k])
+                    {
+                        flag=1;
+                        goto A;
+                    }
+                }
+            }
+        }
+        A:
+            if(flag==0)
+                cout<<"No sequence found"<<endl;
+            else
+                cout<<i+1<<", "<<j+1<<", "<<k+1<<endl;
+    }
+}

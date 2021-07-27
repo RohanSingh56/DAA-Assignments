@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int size,flag=0;
+        cin>>size;
+        int a[size],i,j,k;
+        for(i=0;i<size;i++)
+            cin>>a[i];
+        int key,ctr=0;
+        cin>>key;
+        for(i=0;i<size;i++)
+        {
+            for(j=i+1;j<size;j++)
+            {
+                if(abs(a[i]-a[j])==key)
+                {
+                    flag=1;
+                    ctr++;
+                }
+            }
+        }
+        if(flag==0)
+            cout<<"No pair found"<<endl;
+        else
+            cout<<ctr<<endl;
+    }
+}
